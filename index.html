@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Pharmacy Management System</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><div class="brand"><span class="logo">✚</span><div><h1>Pharmacy Management</h1><p>Medicine inventory made simple</p></div></div><span class="badge">STUDENT PROJECT</span></header>
+<main class="container">
+<section class="intro"><div class="welcome"><p class="eyebrow">INVENTORY CONTROL</p><h2>Medicine Dashboard</h2><p class="muted">Add medicines, track stock, and find items quickly.</p></div><div class="summary"><span>Total medicines</span><strong id="totalCount">0</strong></div><div class="summary warning"><span>Low stock (≤ 5)</span><strong id="lowCount">0</strong></div></section>
+<section class="panel"><h3 id="formTitle">Add a medicine</h3><p class="muted small">Enter medicine details below.</p>
+<form id="medicineForm"><input type="hidden" id="medicineId">
+<label>Medicine name<input id="name" required maxlength="80" placeholder="e.g. Paracetamol"></label>
+<label>Category<input id="category" required maxlength="60" placeholder="e.g. Pain relief"></label>
+<label>Quantity in stock<input id="quantity" type="number" min="0" step="1" required placeholder="e.g. 30"></label>
+<label>Price per unit<input id="price" type="number" min="0" step="0.01" required placeholder="e.g. 2.50"></label>
+<label>Expiry date<input id="expiry" type="date" required></label>
+<div class="actions"><button class="primary" type="submit" id="saveBtn">Add medicine</button><button class="secondary hidden" type="button" id="cancelEdit">Cancel</button></div></form></section>
+<section class="panel"><div class="table-heading"><div><h3>Medicine inventory</h3><p class="muted small">Search, edit, or remove a medicine.</p></div><input id="search" class="search" type="search" placeholder="Search medicines..."></div>
+<div class="table-wrap"><table><thead><tr><th>Medicine</th><th>Category</th><th>Quantity</th><th>Unit price</th><th>Expiry date</th><th>Status</th><th>Actions</th></tr></thead><tbody id="medicineRows"></tbody></table></div><p id="emptyMessage" class="empty">No medicines yet. Add your first medicine above.</p></section>
+<p class="footnote">Educational demo only. Use sample data; this is not a real pharmacy or medical advice system.</p></main><script src="script.js"></script></body></html>
